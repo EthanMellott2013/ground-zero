@@ -158,6 +158,49 @@
   setInterval(updateCountdown, 1000);
   updateCountdown();
 </script>
+  <!-- AFTERSHOCK MEMBERS SECTION -->
+<section style="margin-top:100px; text-align:center;">
+
+  <!-- LOCK -->
+  <div id="aftershock-lock">
+    <h2>Members Only</h2>
+    <p>Enter access code</p>
+    <input
+      type="password"
+      id="aftershock-code"
+      maxlength="4"
+      style="padding:10px; font-size:18px; width:120px; text-align:center;"
+    >
+    <br><br>
+    <button onclick="unlockAftershock()">Enter</button>
+    <p id="aftershock-error" style="color:red;"></p>
+  </div>
+
+  <!-- CONTENT (HIDDEN) -->
+  <div id="aftershock-content" style="display:none;">
+    <img
+      src="ground-zero-aftershock.png"
+      alt="Ground Zero Aftershock Cover"
+      style="max-width:300px; margin-bottom:20px;"
+    >
+    <h2>Ground Zero: Aftershock</h2>
+    <p><em>Not released yet.</em></p>
+  </div>
+
+</section>
+
+<script>
+  function unlockAftershock() {
+    const code = document.getElementById("aftershock-code").value;
+    if (code === "0928") {
+      document.getElementById("aftershock-lock").style.display = "none";
+      document.getElementById("aftershock-content").style.display = "block";
+    } else {
+      document.getElementById("aftershock-error").textContent = "Incorrect code.";
+    }
+  }
+</script>
+
 </body>
 </html>
 
