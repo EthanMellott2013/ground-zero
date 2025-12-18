@@ -216,15 +216,26 @@
 </section>
 
 <script>
-  function unlockAftershock() {
-    const code = document.getElementById("aftershock-code").value;
-    if (code === "0928") {
-      document.getElementById("aftershock-lock").style.display = "none";
-      document.getElementById("aftershock-content").style.display = "block";
-    } else {
-      document.getElementById("aftershock-error").textContent = "Incorrect code.";
-    }
+  <script>
+function unlock() {
+  const code = document.getElementById("code").value;
+  const lock = document.getElementById("lock");
+  const aftershock = document.getElementById("aftershock");
+
+  if (code === "0928") {
+    lock.classList.add("fade-out");
+
+    setTimeout(() => {
+      lock.style.display = "none";
+      aftershock.style.display = "block";
+      aftershock.classList.add("fade-in");
+    }, 600);
+  } else {
+    alert("Incorrect code");
   }
+}
+</script>
+
 </script>
 
 </body>
