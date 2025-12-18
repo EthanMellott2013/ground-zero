@@ -161,28 +161,29 @@
 </footer>
 
 <script>
-  const releaseDate = new Date("September 28, 2028 00:00:00").getTime();
-  const countdownEl = document.getElementById("countdown");
+function unlock() {
+  const input = document.getElementById("code");
+  const lock = document.getElementById("lock");
+  const aftershock = document.getElementById("aftershock");
 
-  function updateCountdown() {
-    const now = new Date().getTime();
-    const distance = releaseDate - now;
-
-    if (distance <= 0) {
-      countdownEl.innerHTML = "🚀 LIVE NOW — GROUND ZERO IS OUT!";
-      return;
-    }
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    countdownEl.innerHTML = `COMING SEPTEMBER 28, 2028 • ${days}d ${hours}h ${minutes}m ${seconds}s`;
+  if (!input || !lock || !aftershock) {
+    console.error("Missing elements");
+    return;
   }
 
-  setInterval(updateCountdown, 1000);
-  updateCountdown();
+  if (input.value === "0928") {
+    lock.classList.add("fade-out");
+
+    setTimeout(() => {
+      lock.style.display = "none";
+      aftershock.style.display = "block";
+      aftershock.classList.add("fade-in");
+    }, 600);
+  } else {
+    alert("Incorrect code");
+  }
+}
+
 </script>
   <!-- AFTERSHOCK MEMBERS SECTION -->
 <section style="margin-top:100px; text-align:center;">
