@@ -103,20 +103,6 @@
   </style>
 </head>
 <body>
-  <div id="members">
-  <h2>Members Only</h2>
-  <input type="password" id="memberCode" placeholder="Enter code">
-  <br><br>
-  <button onclick="unlockMembers()">Enter</button>
-
-  <div id="memberContent" style="display:none; margin-top:20px;">
-    <h3>Ground Zero: Aftershock</h3>
-    <img src="aftershock-cover.png" style="max-width:250px;">
-    <p><strong>Status:</strong> Not released yet.</p>
-  </div>
-</div>
-
-
 <header>
   <h1>GROUND ZERO</h1>
   <p>A Spy thriller where one mistake could lead to death.</p>
@@ -168,19 +154,6 @@
     <strong>Contact:</strong> <a href="mailto:stopthepuck13@gmail.com" style="color:#f5f5f5;">stopthepuck13@gmail.com</a>
   </p>
 </section>
-  <script>
-function unlockMembers() {
-  const code = document.getElementById("memberCode").value;
-  const content = document.getElementById("memberContent");
-
-  if (code === "0928") {
-    content.style.display = "block";
-  } else {
-    alert("Incorrect");
-  }
-}
-</script>
-
 
 <footer>
   © 2025 Ground Zero • All Rights Reserved
